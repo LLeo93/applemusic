@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Navbar, Container, Form, Button } from 'react-bootstrap';
-import { useDispatch } from 'react-redux'; // Usa useDispatch per inviare azioni
+import React, { useState, useEffect } from 'react';
+import { Navbar, Container, Form, Button, Alert } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux'; // Usa useDispatch per inviare azioni
 import { fetchNewReleases } from '../actions/MusicAction'; // Importa l'azione Redux per la ricerca
 import {
   FaBackward,
@@ -13,7 +13,9 @@ import {
 
 function AppNavbar() {
   const [searchTerm, setSearchTerm] = useState(''); // Stato locale per il termine di ricerca
+  const [showAlert, setShowAlert] = useState(false); // Stato per gestire la visibilità dell'alert
   const dispatch = useDispatch(); // Hook per dispatchare le azioni
+  const searchSuccess = useSelector((state) => state.music.searchSuccess); // Ottieni lo stato di successo della ricerca
 
   // Gestisci il submit del form (invio della ricerca)
   const handleSearchSubmit = (e) => {
@@ -24,8 +26,18 @@ function AppNavbar() {
     }
   };
 
+  // Gestisci l'alert quando la ricerca ha successo
+  useEffect(() => {
+    if (searchSuccess) {
+      setShowAlert(true);
+      const timer = setTimeout(() => setShowAlert(false), 1500); // Auto-hide
+      return () => clearTimeout(timer);
+    }
+  }, [searchSuccess]);
+
   return (
     <>
+      {/* Navbar superiore con alert */}
       <Navbar
         expand="lg"
         className="py-3 px-4 d-none d-md-flex justify-content-between align-items-center"
@@ -90,6 +102,20 @@ function AppNavbar() {
           <span className="text-white fw-bold">Accedi</span>
         </div>
       </Navbar>
+
+      {/* Mostra alert quando la ricerca ha successo */}
+      {showAlert && (
+        <Alert
+          variant="success"
+          onClose={() => setShowAlert(false)}
+          dismissible
+          className="p-2 py-1 mb-3"
+        >
+          Ricerca effettuata con successo!
+        </Alert>
+      )}
+
+      {/* Navbar mobile con ricerca */}
       <Navbar expand="lg" bg="dark" variant="dark" className="d-md-none">
         <Container>
           {/* Hamburger a sinistra */}
