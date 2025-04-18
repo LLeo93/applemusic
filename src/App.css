@@ -1,0 +1,15 @@
+.very-small-text {
+  font-size: 0.55rem !important; /* Piccolissimo testo */
+}
+
+@media (min-width: 768px) {
+  .very-small-text {
+    font-size: 0.65rem !important; /* Un filo più leggibile su tablet */
+  }
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
