@@ -4,7 +4,7 @@ import { faPlay, faStepForward } from '@fortawesome/free-solid-svg-icons';
 const FooterX = () => {
   return (
     <footer
-      className="bg-dark text-white py-2 fixed-bottom"
+      className="bg-dark text-white py-2 fixed-bottom d-lg-none"
       style={{
         zIndex: 1000,
         width: '95%',

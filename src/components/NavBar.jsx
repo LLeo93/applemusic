@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Navbar,
-  Container,
-  NavDropdown,
-  Nav,
-  Form,
-  Button,
-} from 'react-bootstrap';
+import { Navbar, Container, Form, Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux'; // Usa useDispatch per inviare azioni
 import { fetchNewReleases } from '../actions/MusicAction'; // Importa l'azione Redux per la ricerca
 
@@ -44,24 +37,8 @@ function AppNavbar() {
 
         {/* Menu espanso */}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-
-          {/* Barra di ricerca */}
-          <Form className="d-flex" onSubmit={handleSearchSubmit}>
+          {/* Barra di ricerca visibile solo su dispositivi < lg */}
+          <Form className="d-flex d-lg-none" onSubmit={handleSearchSubmit}>
             <Form.Control
               type="text"
               placeholder="Cerca..."
