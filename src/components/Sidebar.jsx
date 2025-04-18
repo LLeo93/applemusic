@@ -16,7 +16,7 @@ function Sidebar() {
   useEffect(() => {
     if (searchSuccess) {
       setShowAlert(true);
-      const timer = setTimeout(() => setShowAlert(false), 1500); // Auto-hide
+      const timer = setTimeout(() => setShowAlert(false), 1500);
       return () => clearTimeout(timer);
     }
   }, [searchSuccess]);
@@ -73,7 +73,6 @@ function Sidebar() {
         />
       </InputGroup>
 
-      {/* Voci di navigazione */}
       <div className="d-flex flex-column">
         <div
           className="d-flex align-items-center mb-3"

@@ -12,21 +12,18 @@ import {
 } from 'react-icons/fa';
 
 function AppNavbar() {
-  const [searchTerm, setSearchTerm] = useState(''); // Stato locale per il termine di ricerca
-  const [showAlert, setShowAlert] = useState(false); // Stato per gestire la visibilità dell'alert
-  const dispatch = useDispatch(); // Hook per dispatchare le azioni
-  const searchSuccess = useSelector((state) => state.music.searchSuccess); // Ottieni lo stato di successo della ricerca
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
+  const dispatch = useDispatch();
+  const searchSuccess = useSelector((state) => state.music.searchSuccess);
 
-  // Gestisci il submit del form (invio della ricerca)
   const handleSearchSubmit = (e) => {
-    e.preventDefault(); // Impedisce l'azione predefinita del form (reload della pagina)
+    e.preventDefault();
     if (searchTerm.trim()) {
-      // Se c'è un termine di ricerca valido
-      dispatch(fetchNewReleases(searchTerm)); // Dispatcha l'azione con il termine di ricerca
+      dispatch(fetchNewReleases(searchTerm));
     }
   };
 
-  // Gestisci l'alert quando la ricerca ha successo
   useEffect(() => {
     if (searchSuccess) {
       setShowAlert(true);
@@ -37,7 +34,6 @@ function AppNavbar() {
 
   return (
     <>
-      {/* Navbar superiore con alert */}
       <Navbar
         expand="lg"
         className="py-3 px-4 d-none d-md-flex justify-content-between align-items-center"
@@ -60,7 +56,7 @@ function AppNavbar() {
             }}
           >
             <img
-              src="/logos/music.svg" // cambia se necessario
+              src="/logos/music.svg"
               alt="Logo Apple"
               height={24}
               style={{ filter: 'invert(1)' }}
@@ -77,7 +73,6 @@ function AppNavbar() {
                 borderRadius: '10px',
               }}
             >
-              {/* Simulazione barra progressiva */}
               <div
                 style={{
                   width: '40%',
@@ -103,7 +98,6 @@ function AppNavbar() {
         </div>
       </Navbar>
 
-      {/* Mostra alert quando la ricerca ha successo */}
       {showAlert && (
         <Alert
           variant="success"
@@ -115,13 +109,10 @@ function AppNavbar() {
         </Alert>
       )}
 
-      {/* Navbar mobile con ricerca */}
       <Navbar expand="lg" bg="dark" variant="dark" className="d-md-none">
         <Container>
-          {/* Hamburger a sinistra */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-          {/* Brand con logo */}
           <Navbar.Brand href="#home" className="text-white">
             <img
               src="/logos/music.svg"
@@ -136,14 +127,13 @@ function AppNavbar() {
 
           {/* Menu espanso */}
           <Navbar.Collapse id="basic-navbar-nav">
-            {/* Barra di ricerca visibile solo su dispositivi < lg */}
             <Form className="d-flex d-lg-none" onSubmit={handleSearchSubmit}>
               <Form.Control
                 type="text"
                 placeholder="Cerca..."
                 name="search"
-                value={searchTerm} // Imposta il valore del campo di ricerca
-                onChange={(e) => setSearchTerm(e.target.value)} // Aggiorna il termine di ricerca
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 className="me-2"
               />
               <Button type="submit" variant="outline-light">

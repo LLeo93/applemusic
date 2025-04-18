@@ -5,20 +5,18 @@ import './LoadingAlert.css';
 const LoadingAlert = ({ show, onClose }) => {
   const [timerExpired, setTimerExpired] = useState(false);
 
-  // Impostiamo il timer per far sparire l'alert dopo 20 secondi
   useEffect(() => {
     if (show) {
       const timer = setTimeout(() => {
-        setTimerExpired(true); // Impostiamo il timer per nascondere l'alert
-        onClose(); // Chiude l'alert automaticamente
+        setTimerExpired(true);
+        onClose();
       }, 20000);
 
-      // Cleanup del timer
       return () => clearTimeout(timer);
     }
   }, [show, onClose]);
 
-  if (!show && timerExpired) return null; // Non mostrare l'alert dopo che è scomparso
+  if (!show && timerExpired) return null;
 
   return (
     <Alert

@@ -2,7 +2,7 @@ const initialState = {
   loading: false,
   newReleases: [],
   error: null,
-  searchSuccess: false, // 👈 nuovo stato
+  searchSuccess: false,
 };
 
 const musicReducer = (state = initialState, action) => {
@@ -14,7 +14,7 @@ const musicReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         newReleases: action.payload,
-        searchSuccess: true, // ✅ success
+        searchSuccess: true,
       };
     case 'FETCH_NEW_RELEASES_FAIL':
       return {
