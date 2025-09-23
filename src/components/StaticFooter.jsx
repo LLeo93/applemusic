@@ -1,5 +1,4 @@
-import React from 'react'; // Importa React, necessario per definire il componente
-import { Container, Row, Col } from 'react-bootstrap'; // Importa i componenti da React Bootstrap
+import { Container, Row, Col } from 'react-bootstrap';
 
 const StaticFooter = () => {
   return (

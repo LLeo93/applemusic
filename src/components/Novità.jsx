@@ -4,14 +4,11 @@ import { ChevronRight } from 'react-bootstrap-icons';
 function NovitaSection() {
   return (
     <Container className="mt-4 bg-dark text-light">
-      {/* Titolo con bordo */}
       <h4 className="mb-2">Novità</h4>
       <hr className="border border-secondary-subtle opacity-50" />
 
-      {/* Carosello di card */}
       <div className="overflow-hidden">
         <div className="d-flex gap-3 overflow-auto pb-3">
-          {/* Card 1 */}
           <Card
             className="bg-dark text-light border-0"
             style={{ width: '50%', flex: '0 0 auto' }}
@@ -32,7 +29,6 @@ function NovitaSection() {
             />
           </Card>
 
-          {/* Card 2 */}
           <Card
             className="bg-dark text-light border-0"
             style={{ width: '50%', flex: '0 0 auto' }}
@@ -53,7 +49,6 @@ function NovitaSection() {
             />
           </Card>
 
-          {/* Card 3 */}
           <Card
             className="bg-dark text-light border-0"
             style={{ width: '50%', flex: '0 0 auto' }}
@@ -74,7 +69,6 @@ function NovitaSection() {
             />
           </Card>
 
-          {/* Card 4 */}
           <Card
             className="bg-dark text-light border-0"
             style={{ width: '50%', flex: '0 0 auto' }}
@@ -97,13 +91,11 @@ function NovitaSection() {
         </div>
       </div>
 
-      {/* Titolo con freccia */}
       <div className="d-flex justify-content-between align-items-center mt-4 mb-2">
         <h5 className="mb-0">Consigliati</h5>
         <ChevronRight size={20} />
       </div>
 
-      {/* Tre card non-carousel */}
       <Row className="g-3">
         <Col xs={4}>
           <Card className="bg-dark text-light border-0">

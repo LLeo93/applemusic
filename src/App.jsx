@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
 import AppNavbar from './components/NavBar.jsx';
 import NovitaSection from './components/Novità.jsx';
 import NuoveUscite from './components/NuoveUscite.jsx';

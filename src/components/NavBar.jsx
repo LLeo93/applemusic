@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar, Container, Form, Button, Alert } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux'; // Usa useDispatch per inviare azioni
-import { fetchNewReleases } from '../actions/MusicAction'; // Importa l'azione Redux per la ricerca
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchNewReleases } from '../actions/MusicAction';
 import {
   FaBackward,
   FaPlay,
@@ -27,7 +27,7 @@ function AppNavbar() {
   useEffect(() => {
     if (searchSuccess) {
       setShowAlert(true);
-      const timer = setTimeout(() => setShowAlert(false), 1500); // Auto-hide
+      const timer = setTimeout(() => setShowAlert(false), 1500);
       return () => clearTimeout(timer);
     }
   }, [searchSuccess]);

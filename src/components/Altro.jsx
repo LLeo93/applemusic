@@ -7,7 +7,6 @@ const Altro = () => {
       <h4 className="mb-4">Altro da Esplorare</h4>
 
       <Row className="g-3">
-        {/* Card 1 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -19,7 +18,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 2 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -31,7 +29,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 3 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -43,7 +40,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 4 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -55,7 +51,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 5 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -67,7 +62,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 6 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -79,7 +73,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 7 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -91,7 +84,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 8 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">
@@ -103,7 +95,6 @@ const Altro = () => {
           </Card>
         </Col>
 
-        {/* Card 9 */}
         <Col xs={12} md={4}>
           <Card className="bg-dark text-white border-0 d-flex align-items-center">
             <Card.Body className="d-flex justify-content-between align-items-center w-100">

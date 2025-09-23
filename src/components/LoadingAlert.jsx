@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Alert, Button } from 'react-bootstrap';
-import './LoadingAlert.css';
 
 const LoadingAlert = ({ show, onClose }) => {
   const [timerExpired, setTimerExpired] = useState(false);
@@ -31,7 +30,7 @@ const LoadingAlert = ({ show, onClose }) => {
         textAlign: 'center',
       }}
     >
-      <Alert.Heading>Ciao Stefano</Alert.Heading>
+      <Alert.Heading>Ciao</Alert.Heading>
       <p>
         REsponsive, searchbar funzionante sia nella nav dentro l'hamburger sia
         nell aside con alert e caricamento funzionante
